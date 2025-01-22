@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mabushi and Associates - Legal Excellence</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #222;
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar .logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .navbar .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .navbar ul {
+        list-style: none;
+        display: flex;
+      }
+
+      .navbar ul li {
+        margin: 0 1rem;
+      }
+
+      .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      .navbar ul li a:hover {
+        color: #f39c12;
+      }
+
+      .hero {
+        height: 92vh;
+        background: url("image/lawBg.webp") center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        padding: 0 2rem;
+        position: relative; /* To position the milestones */
+        z-index: 2;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Light dark translucent layer */
+        z-index: -1; /* Place the layer behind the content */
+      }
+      /* Milestones Section */
+      .milestones {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Individual Milestone */
+      .milestone-item {
+        text-align: center;
+        color: #fff;
+        font-family: "Arial", sans-serif;
+      }
+
+      .milestone-value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: block;
+      }
+
+      .milestone-label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #ccc;
+      }
+
+      /* Vertical Divider */
+      .milestone-item::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 40px;
+        background: #fff;
+        margin: 0 1rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero button {
+        background: #f39c12;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .hero button:hover {
+        background: #d35400;
+      }
+
+      .about {
+        display: flex;
+        padding: 4rem 2rem;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .about img {
+        flex: 1;
+        width: 600px;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .about .description {
+        flex: 1;
+      }
+
+      .about h2 {
+        margin-bottom: 1rem;
+        color: #f39c12;
+      }
+
+      .about p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+
+      .about button {
+        background: #222;
+        color: #fff;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .about button:hover {
+        background: #444;
+      }
+
+      .why-choose-us-modern {
+        background: linear-gradient(to right, #6a4e3f, #3b2d26);
+        color: #fff;
+        padding: 3rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .why-choose-us-modern .why-question {
+        flex: 1;
+        max-width: 25%;
+        text-align: left;
+      }
+
+      .why-choose-us-modern .why-question h2 {
+        font-size: 2.5rem;
+        margin-top: 40%;
+        color: #f9d4ac;
+      }
+      .container {
+        display: flex;
+      }
+      .why-choose-us-modern .why-picture {
+        flex: 1;
+        max-width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .why-choose-us-modern .why-picture img {
+        width: 300px;
+        height: 500px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        object-fit: cover;
+      }
+
+      .why-choose-us-modern .why-reasons {
+        flex: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+        gap: 1rem;
+        max-width: 100%;
+      }
+
+      .why-choose-us-modern .reason {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, background 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .why-choose-us-modern .reason:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .why-choose-us-modern .reason h3 {
+        font-size: 1.1rem;
+        color: #f9d4ac;
+        margin-bottom: 0.5rem;
+      }
+
+      .why-choose-us-modern .reason p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #f3f3f3;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background: #222;
+        color: #fff;
+      }
+      .our-lawyers {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+        align-items: center; /* Center the lawyer cards horizontally */
+      }
+
+      .lawyer-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+        width: 80%;
+        background: linear-gradient(135deg, #fdfbf8, #fefaf7);
+      }
+
+      .lawyer-info {
+        /* flex: 1; */
+        color: #333;
+      }
+
+      .lawyer-info h3 {
+        font-size: 1rem;
+        color: #888;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .lawyer-info h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .lawyer-info h4 {
+        font-size: 1.2rem;
+        color: #555;
+        margin: 0.5rem 0;
+      }
+
+      .lawyer-info p {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .lawyer-photo {
+        /* flex: 0.5; */
+        text-align: right;
+      }
+      .lawyer-description p {
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.6;
+        margin-top: 1rem;
+      }
+      .lawyer-description {
+        width: 40%;
+        height: auto;
+      }
+      .lawyer-photo img {
+        width: 250px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0; /* Ensure no rounding */
+      }
+      .container2 {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+
+      .header p {
+        font-size: 1rem;
+        color: #666;
+        max-width: 300px;
+      }
+
+      .view-more {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .view-more:hover {
+        background-color: #333;
+      }
+
+      .view-more span {
+        margin-left: 5px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2px;
+      }
+
+      .card {
+        width: 300px;
+        height: 400px;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .card-content {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #fff;
+        z-index: 2;
+      }
+
+      .card-content h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .arrow {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 1.2rem;
+        /* transition: background-color 0.3s ease; */
+      }
+      /* Cards Container Partner */
+      .cards-partener {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        padding: 0 20px;
+        background: linear-gradient(
+          to bottom,
+          #0d1117,
+          #161b22
+        ); /* GitHub-like dark gradient */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for the section */
+      }
+
+      /* Card Styles Partner */
+      .card-partener {
+        background-color: #21262d;
+        background-color: #1a1a1a; /* Dark background */
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Soft card shadow */
+        box-shadow: 0 0 15px rgba(212, 188, 101, 0.948), 0 0 30px rgba(245, 219, 101, 0.7); /* Neon glow effect */
+        padding: 15px;
+        width: 30%;
+        min-width: 280px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+      }
+
+      /* Hover Effect for Card */
+      .card-partener:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+      }
+
+      /* Card Title */
+      .card-partener h3 {
+        font-size: 1.6rem;
+        color: #c9d1d9; /* Light color for text on dark background */
+        margin-bottom: 12px;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      /* Card Description */
+      .card-partener p {
+        font-size: 0.9rem;
+        color: #8b949e; /* Lighter grey text to improve contrast */
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      /* Strong Text */
+      .card-partener strong {
+        color: #c9d1d9; /* Light color for strong text */
+        font-weight: 600;
+      }
+
+      /* Card Image Styles */
+      .card-image {
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.75); /* Darker image filter to match dark theme */
+      }
+      .container-card {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      .column-card {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .card-card {
+        background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+        width: 250px;
+        height: 350px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .card-card h2 {
+        margin-top: 20%;
+      }
+      .card-small {
+        height: 250px;
+      }
+      .card-title{
+        color: white;
+      }
+
+      .container-card {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      .column-card {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .card-card {
+        background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+        width: 250px;
+        height: 350px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      .gradient-div {
+        content: "";
+        /* margin-top: 10%; */
+        width: 100%;
+        height: 100%; /* Adjust height as necessary */
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0)
+        );
+        z-index: 4;
+      }
+      .card-card .gradient-div p{
+        color: white;
+      }
+      .card-small {
+        height: 275px;
+      }
+      .card-a {
+        background-image: url("image/gradient.jpg");
+      }
+
+      .card-b {
+        background-image: url("image/brown.jpg");
+      }
+
+      .card-c {
+        background-image: url("image/black.png");
+      }
+
+      .card-d {
+        background-image: url("image/gradient.jpg");
+      }
+
+      .card-e {
+        background-image: url("image/brown2.jpg");
+      }
+
+      .card-f {
+        background-image: url("image/black.png");
+      }
+      .container-card {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      .column-card {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      /* Apply object-fit to the background image */
+      .card-card {
+        background-size: cover; /* Ensures the image covers the card */
+        background-position: center;
+        /* width: 90%; */
+        /* margin-left: 5%; */
+      }
+      .card-card h3 {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .card-card p {
+        color: #666;
+        font-size: 1rem;
+      }
+      /* Section Header */
+      h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        color: #2c3e50;
+      }
+      /* .......................... */
+      .milestone-card {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 900px; /* Limit max width for the card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.milestone-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Ensures the items are equally spaced */
+}
+
+.milestone-item i {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-right: 15px;
+}
+
+.milestone-item h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.milestone-item p {
+  font-size: 1rem;
+  margin: 0;
+  color: #555;
+}
+
+.milestone-card i {
+  transition: transform 0.3s ease;
+}
+
+.milestone-card i:hover {
+  transform: scale(1.1);
+}
+      /* .......................... */
+      /* Responsive Design */
+      @media (max-width: 968px) {
+        .hero {
+          height: 70vh; /* Reduce height for smaller screens */
+          padding: 0 1rem; /* Reduce padding */
+        }
+
+        .hero h1 {
+          font-size: 2.5rem; /* Adjust headline size for smaller screens */
+        }
+
+        .hero p {
+          font-size: 1rem; /* Adjust paragraph font size */
+        }
+
+        .hero button {
+          padding: 0.7rem 1.2rem; /* Smaller button */
+          font-size: 0.9rem; /* Smaller font size */
+        }
+
+        .milestones {
+          bottom: 1rem;
+          left: 1rem;
+          flex-direction: column; /* Stack milestones vertically */
+          align-items: center;
+          padding: 1rem;
+          width: 100%;
+        }
+
+        .milestone-item {
+          margin-bottom: 1rem;
+        }
+
+        .milestone-item::after {
+          display: none;
+        }
+        .about {
+          flex-direction: column;
+          padding: 3rem 1rem;
+        }
+
+        .about img {
+          width: 100%; 
+          max-width: 500px; 
+          margin-bottom: 1.5rem;
+        }
+
+        .about .description {
+          flex: 1;
+          text-align: center;
+        }
+
+        .about h2 {
+          font-size: 2rem;
+        }
+
+        .about p {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+        .container {
+          display: flex;
+          flex-direction: column;
+        }
+        .why-choose-us-modern {
+          padding: 1.5rem 1rem;
+        }
+
+        .why-choose-us-modern .why-question h2 {
+          font-size: 1.8rem;
+          margin-top: 1rem;
+        }
+
+        .why-choose-us-modern .why-picture img {
+          width: 250px;
+          height: 250px;
+        }
+
+        .why-choose-us-modern .reason h3 {
+          font-size: 1rem;
+        }
+
+        .why-choose-us-modern .reason p {
+          font-size: 0.9rem;
+        }
+        .why-choose-us-modern {
+          padding: 2rem 1rem;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .why-choose-us-modern .why-question {
+          max-width: 100%;
+          margin-bottom: 1rem;
+        }
+
+        .why-choose-us-modern .why-picture {
+          max-width: 80%;
+          margin-bottom: 1.5rem;
+        }
+
+        .why-choose-us-modern .why-reasons {
+          max-width: 100%;
+        }
+
+        .why-choose-us-modern .reason {
+          padding: 1rem 1.5rem;
+        }
+
+        .why-choose-us-modern .reason h3 {
+          font-size: 1.2rem;
+        }
+
+        .why-choose-us-modern .reason p {
+          font-size: 0.95rem;
+        }
+        .why-choose-us-modern {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .why-choose-us-modern .why-question,
+        .why-choose-us-modern .why-picture {
+          max-width: 100%;
+          text-align: center;
+        }
+        .why-choose-us-modern .why-question h2 {
+          margin-top: 20%;
+          font-size: 2rem;
+        }
+        .why-choose-us-modern .why-reasons {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .why-choose-us-modern .reason {
+          padding: 1.5rem;
+        }
+
+        .about button {
+          padding: 0.7rem 1.2rem;
+          font-size: 0.9rem;
+        }
+        .lawyer-card {
+          flex-direction: column;
+          text-align: center;
+          width: 100%;
+        }
+
+        .lawyer-description {
+          width: 80%;
+          margin: 1rem 0;
+        }
+
+        .lawyer-photo {
+          text-align: center; /* Center the photo */
+          margin-top: 1rem;
+        }
+
+        .lawyer-photo img {
+          width: 200px; /* Reduce image size for smaller screens */
+          height: auto;
+        }
+
+        .our-lawyers {
+          padding: 1rem; /* Reduce padding on smaller screens */
+        }
+        .card-partener {
+          width: 70%; /* 1 card per row */
+          margin-left: 15%;
+        }
+        .navbar .menu-toggle {
+          display: block;
+        }
+
+        .navbar .nav-links {
+          display: none;
+          flex-direction: column;
+          align-items: center; /* Center horizontally */
+          justify-content: center; /* Center vertically */
+          background: #222; /* Background for the dropdown */
+          position: absolute; /* Position below the navbar */
+          top: 100%; /* Start just below the navbar */
+          left: 0;
+          width: 100%;
+          padding: 1rem 0;
+          opacity: 0; /* Fully transparent by default */
+          transform: scaleY(0); /* Collapse vertically */
+          transform-origin: top; /* Animate from the top */
+          transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+        }
+
+        .nav-links.active {
+          display: flex; /* Show the links */
+          opacity: 1; /* Fully visible */
+          transform: scaleY(1); /* Expand vertically */
+        }
+
+        .navbar ul li {
+          margin: 0.5rem 0; /* Spacing between links */
+        }
+        .nav-links a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 1.2rem;
+          font-weight: bold;
+          transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+          color: #f39c12;
+        }
+        .container-card {
+          display: flex;
+          justify-content: center;
+          gap: 25px;
+        }
+
+        .column-card {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+        }
+        .card-card {
+          width: 90%;
+          margin-left: 5%;
+          height: 380px;
+        }
+        .card-small {
+          width: 90%;
+          margin-left: 5%;
+          height: 380px;
+        }
+        /* ...................... */
+        .milestone-card {
+    max-width: 600px; /* Reduce width further */
+    padding: 15px;
+  }
+
+  .milestone-item i {
+    font-size: 1.8rem; /* Smaller icons on mobile */
+  }
+
+  .milestone-item h3 {
+    font-size: 0.9rem; /* Smaller heading size */
+  }
+
+  .milestone-item p {
+    font-size: 0.8rem; /* Smaller text size */
+  }
+        /* ...................... */
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          height: 60vh; /* Further reduce height for very small screens */
+          padding: 0 0.5rem; /* Further reduce padding */
+        }
+
+        .hero h1 {
+          font-size: 1.8rem; /* Further reduce headline size */
+        }
+
+        .hero p {
+          font-size: 0.9rem; /* Adjust paragraph font size */
+        }
+
+        .hero button {
+          padding: 0.6rem 1rem; /* Adjust button size */
+          font-size: 0.8rem; /* Smaller font size for very small screens */
+        }
+
+        .milestones {
+          bottom: 0.5rem;
+          left: 0.5rem;
+          padding: 0.8rem;
+        }
+
+        .milestone-item {
+          margin-bottom: 0.5rem;
+        }
+
+        .milestone-value {
+          font-size: 1.2rem; /* Smaller milestone value */
+        }
+
+        .milestone-label {
+          font-size: 0.9rem; /* Smaller milestone label */
+        }
+        .about {
+          padding: 2rem 1rem; /* Reduce padding even further */
+        }
+
+        .about img {
+          max-width: 400px; /* Further limit image size */
+          margin-bottom: 1rem; /* Reduce space below the image */
+        }
+
+        .about h2 {
+          font-size: 1.8rem; /* Smaller h2 font size */
+        }
+
+        .about p {
+          font-size: 0.95rem; /* Adjust paragraph font size for small screens */
+        }
+
+        .about button {
+          padding: 0.6rem 1rem; /* Adjust button padding for very small screens */
+          font-size: 0.8rem; /* Smaller font size for very small screens */
+        }
+        .why-choose-us-modern {
+          padding: 1.5rem 1rem; /* Further reduce padding for small screens */
+        }
+
+        .why-choose-us-modern .why-question h2 {
+          font-size: 1.8rem; /* Smaller question font size */
+        }
+
+        .why-choose-us-modern .why-picture img {
+          width: 250px; /* Adjust image width for small screens */
+          height: 250px; /* Adjust image height */
+        }
+
+        .why-choose-us-modern .reason h3 {
+          font-size: 1rem; /* Smaller reason heading font size */
+        }
+
+        .why-choose-us-modern .reason p {
+          font-size: 0.9rem; /* Smaller paragraph font size */
+        }
+        .lawyer-info h1 {
+          font-size: 1.6rem; /* Smaller font size for smaller screens */
+        }
+
+        .lawyer-info h4 {
+          font-size: 1rem; /* Adjust size for small screens */
+        }
+
+        .lawyer-info p {
+          font-size: 0.9rem; /* Adjust size for small screens */
+        }
+
+        .lawyer-description p {
+          font-size: 0.9rem; /* Adjust size for small screens */
+        }
+
+        .lawyer-photo img {
+          width: 180px; /* Reduce image size further for very small screens */
+        }
+        .card-partener h3 {
+          font-size: 1.4rem; /* Slightly smaller title */
+        }
+
+        .card-partener p {
+          font-size: 0.85rem; /* Slightly smaller text */
+        }
+        .card-partener {
+          width: 90%; /* 1 card per row */
+          margin-left: 5%;
+        }
+        .why-choose-us-modern .why-question h2 {
+          font-size: 1.8rem;
+          margin-top: 10%;
+        }
+        .why-choose-us-modern .reason {
+          font-size: 0.9rem;
+        }
+        .container-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 25px;
+        }
+        .card-card {
+          width: 90%;
+          margin-left: 5%;
+          height: 280px;
+        }
+        .card-small {
+          margin-left: 5%;
+          width: 90%;
+          height: 280px;
+        }
+        .why-choose-us-modern .why-question h2 {
+          font-size: 1.8rem;
+          margin-top: 10%;
+        }
+        .why-choose-us-modern .reason {
+          font-size: 0.9rem;
+        }
+        /* ...................... */
+        .container2 {
+        max-width: 1200px;
+        margin: 0 auto;
+       }
+
+      .header {
+        width: 90%;
+        margin-left: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      .header p {
+        font-size: 1rem;
+        color: #666;
+        max-width: 300px;
+      }
+
+      .view-more {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+        /* ...................... */
+        /* ................... */
+        .milestone-card {
+    width: 94%;
+    padding: 10px;
+  }
+
+  .milestone-item {
+    flex: 1 1 22%; /* Make sure items are still evenly spaced */
+  }
+
+  .milestone-item i {
+    font-size: 1.25rem; /* Smaller icons for tiny screens */
+  }
+
+  .milestone-item h3 {
+    font-size: 0.65rem; /* Even smaller headings */
+  }
+
+  .milestone-item p {
+    font-size: 0.55rem; /* Smaller text for mobile */
+  }
+        /* ................... */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <img src="image/logo.jpg" class="logo" alt="" />
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        &#9776;
+        <!-- Hamburger icon -->
+      </button>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#why-choose-us">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+      <h1>Vos Partenaires de Confiance en Excellence Juridique</h1>
+      <p>
+        Nous offrons des solutions juridiques sur mesure, alliant
+        professionnalisme et expertise, pour les entreprises et les
+        particuliers.
+      </p>
+      <button>Contact Us</button>
+      <div class="milestone-card">
+        <div class="milestone-item">
+          <i class="fas fa-gavel"></i>
+          <div>
+            <h3>Lawyers</h3>
+            <p>25+ Experts</p>
+          </div>
+        </div>
+        <div class="milestone-item">
+          <i class="fas fa-briefcase"></i>
+          <div>
+            <h3>Experience</h3>
+            <p>15+ Years</p>
+          </div>
+        </div>
+        <div class="milestone-item">
+          <i class="fas fa-users"></i>
+          <div>
+            <h3>Clients</h3>
+            <p>200+ Satisfied</p>
+          </div>
+        </div>
+        <div class="milestone-item">
+          <i class="fas fa-file-alt"></i>
+          <div>
+            <h3>Cases</h3>
+            <p>300+ Cases Won</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- <div class="milestones">
+      <div class="milestone-item">
+        <span class="milestone-value">10+</span>
+        <span class="milestone-label">Years of Experience</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-value">20</span>
+        <span class="milestone-label">Lawyers</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-value">500+</span>
+        <span class="milestone-label">Cases Handled</span>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-value">1000+</span>
+        <span class="milestone-label">Clients</span>
+      </div>
+    </div> -->
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <img src="image/about.jpg" alt="Law Firm" />
+      <div class="description">
+        <h2>Qui Nous Somme?</h2>
+        <p>
+          Le Cabinet BIGIRIMANA et Associés a été créé le 22/10/1999 par Maître
+          Jean Bosco Bigirimana. Le Cabinet a l'ambition d'être proche du
+          client. À cet effet, le Cabinet dispose déjà de 3 bureaux, dont 2 dans
+          chacune des provinces politiques et économiques du Burundi :
+          Bujumbura, Gitega ainsi qu'à Muramvya.
+        </p>
+      </div>
+    </section>
+    <!-- Expertise Area -->
+    <div class="domaines">
+    <div class="container2">
+      <div class="header">
+        <div>
+          <h1>Domaines D'expertise du Cabinet</h1>
+          <p>
+            Découvrez les differentes domaines d'expertise de notre cabinet,
+            offrant des solutions juridiques adaptées à vos besoins.
+          </p>
+        </div>
+        <a href="#" class="view-more">View More <span>&rarr;</span></a>
+      </div>
+    </div>
+    <div class="container-card">
+      <div class="column-card">
+        <div class="card-card card-small card-a">
+          <div class="gradient-div">
+            <h2 class="card-title">Droit du Travail</h2>
+            <p>Conseil et défense en droit du travail.</p>
+          </div>
+          <img class="card-image" src="path/to/your-image-1.jpg" alt="Card 1" />
+        </div>
+        <div class="card-card card-b">
+          <div class="gradient-div">
+            <h2 class="card-title">Aide aux Héritiers</h2>
+            <p>Accompagnement dans la récupération des droits successoraux.</p>
+          </div>
+          <img class="card-image" src="path/to/your-image-2.jpg" alt="Card 2" />
+        </div>
+      </div>
+      <div class="column-card">
+        <div class="card-card card-c">
+          <div class="gradient-div">
+            <h2 class="card-title">Droit des Affaires</h2>
+            <p>
+              Conseil juridique pour les entreprises et les transactions
+              commerciales.
+            </p>
+          </div>
+          <img class="card-image" src="path/to/your-image-3.jpg" alt="Card 3" />
+        </div>
+        <div class="card-card card-small card-d">
+          <div class="gradient-div">
+            <h2 class="card-title">Droit Foncier</h2>
+            <p>Gestion et règlement des litiges fonciers.</p>
+          </div>
+          <img class="card-image" src="path/to/your-image-4.jpg" alt="Card 4" />
+        </div>
+      </div>
+      <div class="column-card">
+        <div class="card-card card-small card-e">
+          <div class="gradient-div">
+            <h2 class="card-title">Indemnisation d'Assurance</h2>
+            <p>
+              Assistance dans les démarches d'indemnisation auprès des
+              assurances.
+            </p>
+          </div>
+          <img class="card-image" src="path/to/your-image-5.jpg" alt="Card 5" />
+        </div>
+        <div class="card-card card-f">
+          <div class="gradient-div">
+            <h2 class="card-title">Indemnisation d'Assurance</h2>
+            <p>
+              Assistance dans les démarches d'indemnisation auprès des
+              assurances.
+            </p>
+          </div>
+          <img class="card-image" src="path/to/your-image-6.jpg" alt="Card 6" />
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Why Choose Us -->
+    <section class="why-choose-us-modern" id="why-choose-us">
+      <div class="container">
+        <!-- Question -->
+        <div class="why-question">
+          <h2>Les principes et valeurs qui façonnent notre succès</h2>
+        </div>
+
+        <!-- Picture -->
+        <div class="why-picture">
+          <img src="image/benefit.jpg" alt="Smiling Attorney" />
+        </div>
+
+        <!-- Reasons and Explanation -->
+        <div class="why-reasons">
+          <div class="reason">
+            <h3>Professionnalisme et valeurs chrétiennes</h3>
+            <p>
+              Nous exerçons avec intégrité, justice et respect, guidés par des
+              principes chrétiens solides dans toutes nos pratiques juridiques.
+            </p>
+          </div>
+          <div class="reason">
+            <h3>Esprit d’équipe et solidarité</h3>
+            <p>
+              Notre équipe favorise la collaboration en promouvant la solidarité
+              et le soutien mutuel entre tous les membres du cabinet.
+            </p>
+          </div>
+          <div class="reason">
+            <h3>Traitement rapide des dossiers</h3>
+            <p>
+              Nous mettons l'accent sur l'efficacité, en veillant à ce que
+              chaque dossier soit traité rapidement et efficacement pour
+              répondre aux attentes de nos clients.
+            </p>
+          </div>
+          <div class="reason">
+            <h3>Écoute attentive et médiation</h3>
+            <p>
+              Nous écoutons attentivement nos clients pour comprendre leurs
+              besoins réels et proposons une médiation lorsque cela est
+              nécessaire.
+            </p>
+          </div>
+          <div class="reason">
+            <h3>Communication constante</h3>
+            <p>
+              Nous maintenons une communication ouverte et transparente, en
+              tenant nos clients informés et soutenus où qu’ils se trouvent.
+            </p>
+          </div>
+          <div class="reason">
+            <h3>Orientation vers les résultats</h3>
+            <p>
+              Nous nous concentrons sur l'obtention des meilleurs résultats
+              possibles pour nos clients, quelles que soient les difficultés
+              rencontrées.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-lawyers">
+      <div class="lawyer-card">
+        <div class="lawyer-info">
+          <h3>PROFILE</h3>
+          <h1>BIGIRIMANA Jean Bosco</h1>
+          <h4>Fondateur & Avocat Senior</h4>
+          <p>Expert en droit commercial, social et foncier</p>
+        </div>
+        <div class="lawyer-description">
+          <p>
+            Maître BIGIRIMANA Jean Bosco, fondateur du cabinet depuis 1999, est
+            un ancien magistrat (debout et assis) et avocat de l'État. Il a été
+            bâtonnier du Barreau de Gitega de 2015 à 2022 et membre du Conseil
+            supérieur de la magistrature de 2019 à 2024. Avec une vaste
+            expérience en affaires commerciales, sociales, foncières et
+            successions, il assure la coordination des activités du cabinet.
+          </p>
+        </div>
+        <div class="lawyer-photo">
+          <img src="image/Founder.jpg" alt="BIGIRIMANA Jean Bosco" />
+        </div>
+      </div>
+
+      <div class="lawyer-card">
+        <div class="lawyer-info">
+          <h3>PROFIL</h3>
+          <h1>Félix NIYONIZIGIYE</h1>
+          <h4>Expert en droit foncier</h4>
+          <p>
+            Spécialisé en droit des personnes, de la famille, et des assurances
+          </p>
+        </div>
+        <div class="lawyer-description">
+          <p>
+            Maître Félix NIYONIZIGIYE est avocat depuis le 17 mai 2019, avec une
+            expérience de 5 ans. Il est spécialisé dans le traitement des
+            litiges fonciers, ainsi que dans les affaires en rapport avec le
+            droit des personnes et de la famille, les procédures pénales, le
+            droit du travail et le droit des assurances. Au cabinet, il est
+            chargé de la logistique.
+          </p>
+        </div>
+        <div class="lawyer-photo">
+          <img src="image/Felix.jpg" alt="Félix NIYONIZIGIYE" />
+        </div>
+      </div>
+
+      <div class="lawyer-card">
+        <div class="lawyer-info">
+          <h3>PROFIL</h3>
+          <h1>Déo Ndayisenga</h1>
+          <h4>Spécialiste en Droit Foncier et Social</h4>
+          <p>Expert en Relations Juridiques et Judiciaires</p>
+        </div>
+        <div class="lawyer-description">
+          <p>
+            Maître Déo Ndayisenga est avocat depuis le 19 juillet 2019. Il
+            traite toutes les affaires avec une forte préférence pour les
+            matières foncières et sociales. Au cabinet, il est responsable des
+            relations avec les juridictions et autres services juridiques et
+            judiciaires.
+          </p>
+        </div>
+        <div class="lawyer-photo">
+          <img src="image/Deo.jpg" alt="Déo Ndayisenga" />
+        </div>
+      </div>
+
+      <div class="lawyer-card">
+        <div class="lawyer-info">
+          <h3>PROFIL</h3>
+          <h1>Landry Urlich BIGIRIMANA</h1>
+          <h4>Spécialiste en Droit des Affaires</h4>
+          <p>Axé sur le Droit des Affaires et les Relations Clientèles</p>
+        </div>
+        <div class="lawyer-description">
+          <p>
+            Landry Urlich BIGIRIMANA est un professionnel du droit, titulaire
+            d'un baccalauréat en droit et actuellement en Master en Droit des
+            Affaires. Il est collaborateur dans un cabinet, principalement
+            chargé de la préparation des conclusions juridiques, des relations
+            avec la clientèle et de l'introduction d'innovations dans les
+            pratiques du cabinet.
+          </p>
+        </div>
+        <div class="lawyer-photo">
+          <img src="image/Landry.jpg" alt="Landry Urlich BIGIRIMANA" />
+        </div>
+      </div>
+    </section>
+
+    <section class="partners">
+      <h2>Nos Partenaires</h2>
+      <div class="cards-partener">
+        <div class="card-partener">
+          <div class="card-image">
+            <img src="images/eric.jpg" alt="Maître Eric BATUNGWANAYO" />
+          </div>
+          <h3>Maître Eric BATUNGWANAYO</h3>
+          <p>
+            <strong>Spécialisations:</strong> Droit foncier, Droit du travail,
+            Droit pénal, Droit des successions
+          </p>
+          <p>
+            Avocat depuis 2012, il a une expérience avérée dans divers domaines
+            juridiques, et œuvre sous les auspices des organisations non
+            gouvernementales locales en apportant une assistance judiciaire aux
+            victimes des violences basées sur le genre. Responsable du Cabinet
+            de Gitega (Cabinet de MURANYA).
+          </p>
+        </div>
+        <div class="card-partener">
+          <div class="card-image">
+            <img src="images/euphrasie.jpg" alt="Maître Euphrasie NDAYISEYE" />
+          </div>
+          <h3>Maître Euphrasie NDAYISEYE</h3>
+          <p>
+            <strong>Spécialisations:</strong> Litiges fonciers, Commerciaux,
+            Procédures pénales
+          </p>
+          <p>
+            Avocate depuis le 21/01/2013, elle est spécialisée dans les litiges
+            fonciers et commerciaux. Elle a également une expertise dans les
+            procédures pénales et le conseil des organisations non
+            gouvernementales religieuses. Responsable du Cabinet de Gitega.
+          </p>
+        </div>
+        <div class="card-partener">
+          <div class="card-image">
+            <img src="images/nadine.jpg" alt="Maître Nadine HABONIMANA" />
+          </div>
+          <h3>Maître Nadine HABONIMANA</h3>
+          <p>
+            <strong>Spécialisations:</strong> Droit des personnes et de la
+            famille, Droit pénal, Droit foncier, Droit civil
+          </p>
+          <p>
+            Avocate depuis le 20/03/2015, spécialisée en droit des personnes et
+            de la famille, ainsi qu’en droit pénal, foncier et civil. Elle
+            possède aussi une expertise dans la coordination de projets. Membre
+            du Cabinet de Gitega.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Mabushi & Associates. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
